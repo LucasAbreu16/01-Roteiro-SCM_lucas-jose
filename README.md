@@ -9,14 +9,10 @@
 ## 📁 Estrutura do Projeto
 
 ```
-├── index.html      → Página principal
-├── css/
-│   └── style.css   → Estilos da página
-├── js/
-│   └── script.js   → Scripts de interatividade
-├── img/
-│   └── placeholder.png → Imagem placeholder
-└── README.md       → Este arquivo
+├── index.html   → Página principal
+├── style.css    → Estilos da página
+├── script.js    → Scripts de interatividade
+└── README.md    → Este arquivo
 ```
 
 ## 🛠️ Como Executar
@@ -268,12 +264,8 @@ code .
 ```
 01_Roteiro-SCM_[nomes]/
 ├── index.html
-├── css/
-│   └── style.css
-├── js/
-│   └── script.js
-├── img/
-│   └── placeholder.png
+├── style.css
+├── script.js
 └── README.md
 ```
 
@@ -413,7 +405,7 @@ Agora é a vez do **Aluno B** fazer uma alteração e o **Aluno A** sincronizar.
 
 **Tarefa do Aluno B:**
 
-1. Abra o arquivo `css/style.css`.
+1. Abra o arquivo `style.css`.
 2. Adicione ou altere a cor de fundo do `body`:
 
 ```css
@@ -426,7 +418,7 @@ body {
 3. Execute a sequência completa:
 
 ```bash
-git add css/style.css
+git add style.css
 git commit -m "Define cor de fundo e fonte padrão do body"
 git push origin main
 ```
@@ -437,7 +429,7 @@ git push origin main
 git pull origin main
 ```
 
-**✅ Checkpoint — Evidência 7 (Aluno B):** Ambos devem ter as mesmas alterações nos arquivos `index.html` e `css/style.css`.  
+**✅ Checkpoint — Evidência 7 (Aluno B):** Ambos devem ter as mesmas alterações nos arquivos `index.html` e `style.css`.  
 📸 Aluno B: tire um print do terminal com a saída do `git push` bem-sucedido e a página de commits no GitHub mostrando o commit do Aluno B.
 
 ---
@@ -448,9 +440,9 @@ Agora vocês vão experimentar o que acontece quando **ambos fazem alterações 
 
 ### Cenário: Trabalho paralelo sem conflito
 
-**Aluno A** vai editar `js/script.js` e **Aluno B** vai editar `index.html`. Como são **arquivos diferentes**, o Git conseguirá mesclar automaticamente.
+**Aluno A** vai editar `script.js` e **Aluno B** vai editar `index.html`. Como são **arquivos diferentes**, o Git conseguirá mesclar automaticamente.
 
-#### Aluno A — Editar `js/script.js`
+#### Aluno A — Editar `script.js`
 
 Adicione o seguinte código:
 
@@ -464,7 +456,7 @@ document.addEventListener('DOMContentLoaded', function() {
 Faça o commit e push:
 
 ```bash
-git add js/script.js
+git add script.js
 git commit -m "Adiciona mensagem de log ao carregar a página"
 git push origin main
 ```
@@ -512,7 +504,7 @@ git pull origin main
 
 ```
 Merge made by the 'ort' strategy.
- js/script.js | 4 ++++
+ script.js | 4 ++++
  1 file changed, 4 insertions(+)
 ```
 
@@ -526,7 +518,7 @@ git push origin main
 
 **✅ Checkpoint — Evidência 8 (ambos):** Ambos fazem `git pull` e verificam que **ambas** as alterações estão presentes:
 - `index.html` com o parágrafo de descrição
-- `js/script.js` com a mensagem de console
+- `script.js` com a mensagem de console
 
 📸 Tire um print da página de commits no GitHub mostrando os dois commits (um de cada aluno) e o commit de merge automático.
 
@@ -567,7 +559,7 @@ flowchart TD
 
 > ⚠️ **ATENÇÃO:** Ambos devem começar sincronizados. Executem `git pull origin main` antes de iniciar.
 
-#### Aluno A — Alterar `css/style.css`
+#### Aluno A — Alterar `style.css`
 
 Localize (ou adicione) a regra do `h1` e defina:
 
@@ -582,12 +574,12 @@ h1 {
 Faça commit e push:
 
 ```bash
-git add css/style.css
+git add style.css
 git commit -m "Define estilo do h1 com cor vermelha"
 git push origin main
 ```
 
-#### Aluno B — Alterar `css/style.css` (MESMA regra)
+#### Aluno B — Alterar `style.css` (MESMA regra)
 
 **Sem fazer pull**, altere a mesma regra do `h1`:
 
@@ -602,7 +594,7 @@ h1 {
 Faça commit:
 
 ```bash
-git add css/style.css
+git add style.css
 git commit -m "Define estilo do h1 com cor verde"
 ```
 
@@ -625,14 +617,14 @@ git pull origin main
 **Saída esperada:**
 
 ```
-Auto-merging css/style.css
-CONFLICT (content): Merge conflict in css/style.css
+Auto-merging style.css
+CONFLICT (content): Merge conflict in style.css
 Automatic merge failed; fix conflicts and then commit the result.
 ```
 
 ### Passo 5.3 — Entender os Marcadores de Conflito
 
-Abra o arquivo `css/style.css` no VS Code. Você verá algo assim:
+Abra o arquivo `style.css` no VS Code. Você verá algo assim:
 
 ```css
 h1 {
@@ -681,7 +673,7 @@ h1 {
 Após editar e salvar o arquivo corretamente:
 
 ```bash
-git add css/style.css
+git add style.css
 git commit -m "Resolve conflito no estilo do h1 (consenso da dupla)"
 git push origin main
 ```
@@ -693,12 +685,12 @@ git pull origin main
 ```
 
 **✅ Checkpoint Final da Parte 5 — Evidência 9 (ambos):**
-- [ ] O arquivo `css/style.css` **não contém** marcadores de conflito.
+- [ ] O arquivo `style.css` **não contém** marcadores de conflito.
 - [ ] Ambos os alunos possuem a **mesma versão** do arquivo.
 - [ ] O histórico de commits no GitHub mostra o commit de merge.
 - [ ] Abra o `index.html` no navegador e verifique se o estilo está aplicado corretamente.
 
-📸 **Evidência 9a (Aluno B):** Print da tela do VS Code mostrando o arquivo `css/style.css` **após a resolução**, sem marcadores de conflito.  
+📸 **Evidência 9a (Aluno B):** Print da tela do VS Code mostrando o arquivo `style.css` **após a resolução**, sem marcadores de conflito.  
 📸 **Evidência 9b (ambos):** Print do histórico completo de commits no GitHub (`Insights → Network` ou a aba *Commits*), mostrando os commits de ambos os integrantes e o commit de resolução do conflito.  
 📸 **Evidência 9c (ambos):** Print do `index.html` aberto no navegador com o estilo final aplicado.
 
@@ -831,7 +823,7 @@ Cada integrante deve entregar individualmente um documento (**.docx** ou **.pdf*
 | **6** | Aluno B | Terminal com a saída do `git pull` (Passo 3.6) e o `index.html` aberto no VS Code com o título `DevLab - Soluções Digitais` |
 | **7** | Aluno B | Terminal com a saída do `git push` bem-sucedido após o ciclo de inversão de papéis |
 | **8** | Ambos | Página de commits no GitHub mostrando commits de ambos os integrantes e o commit de merge automático (Parte 4) |
-| **9a** | Aluno B | VS Code exibindo `css/style.css` **após a resolução do conflito**, sem marcadores `<<<<<<<` |
+| **9a** | Aluno B | VS Code exibindo `style.css` **após a resolução do conflito**, sem marcadores `<<<<<<<` |
 | **9b** | Ambos | Histórico de commits no GitHub (aba *Commits* ou *Insights → Network*) com o commit de resolução do conflito de ambos os integrantes |
 | **9c** | Ambos | `index.html` aberto no navegador com o estilo final aplicado corretamente |
 
